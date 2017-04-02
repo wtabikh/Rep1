@@ -1,0 +1,27 @@
+
+R version 3.2.1 (2015-06-18) -- "World-Famous Astronaut"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> acq<-load("/Users/bootphonproject/Desktop/segmentation/acqdiv_corpus_2016-09-22_ctn_jap.rda")
+> utterance_data<-data.frame(utterances)
+> clean_corpus<-utterance_data[ , c('language', 'utterance', 'speaker_label')]
+> language_data<-clean_corpus[clean_corpus$language=="Chintang" & clean_corpus$speaker_label!="CHI", ]
+> language_data_noCHI<-language_data[ ,2]
+> write.table(language_data_noCHI, file="/Users/bootphonproject/Desktop/segmentation/results/chintang/clean_corpus.txt", sep=";")
+> 
+> proc.time()
+   user  system elapsed 
+ 44.760   1.206  66.130 
